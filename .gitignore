@@ -1,0 +1,52 @@
+# ─── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+
+# ─── Virtual environments ─────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ─── Environment / secrets ────────────────────────────────────────────────────
+.env
+*.env
+!.env.example
+
+# ─── Streamlit cache ──────────────────────────────────────────────────────────
+.streamlit/
+
+# ─── Model cache (can be re-downloaded) ──────────────────────────────────────
+.cache/
+models/
+*.bin
+*.safetensors
+
+# ─── LaTeX build artifacts ────────────────────────────────────────────────────
+*.log
+*.aux
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# ─── OS junk ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# ─── IDEs ─────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.code-workspace
+
+# ─── Generated files (keep PDF, exclude HTML render helper) ──────────────────
+proposal_render.html
+generate_pdf.py
+NLP_Project_Proposal.log
+NLP_Project_Proposal.tex
