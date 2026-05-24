@@ -1,0 +1,52 @@
+FREELANCE SOFTWARE DEVELOPMENT AGREEMENT
+
+This Freelance Software Development Agreement is entered into as of May 1, 2026 between TechNova Global LLC, a Delaware limited liability company, and Shehroz Ali, an independent contractor.
+
+1. Scope of Work
+Contractor shall provide software development, documentation, deployment support, and related consulting services as described in each Statement of Work. Client may request revisions until Client is satisfied, and Contractor shall provide reasonable revisions without additional fee unless Client approves a written change request.
+
+2. Compensation
+Client shall pay Contractor at a rate of USD 50 per hour. Contractor shall submit monthly invoices. Invoices are payable Net 60 after receipt. Client may dispute any invoice within 30 days and may withhold payment for any disputed amount until the dispute is resolved.
+
+3. Intellectual Property
+All work product, inventions, source code, designs, documentation, discoveries, improvements, and deliverables created by Contractor under this Agreement shall be considered work-for-hire. To the extent any work product is not work-for-hire, Contractor irrevocably assigns all right, title, and interest in such intellectual property to Client. Client shall exclusively own all deliverables.
+
+4. Confidentiality
+Contractor shall keep all Client information, business plans, customer lists, trade secrets, source code, and proprietary information strictly confidential during the term of this Agreement and for 5 years after termination. Contractor shall not disclose such information except as required by law.
+
+5. Non-Compete
+For 24 months after termination, Contractor shall not directly or indirectly engage in any business or activity that competes with Client's business in any market where Client operates, including by providing similar services to competing products or businesses.
+
+6. Non-Solicitation
+For 12 months after termination, Contractor shall not solicit, recruit, hire away, or do business with any Client employee, contractor, customer, or prospective customer with whom Contractor had contact during the project.
+
+7. Exclusivity
+During the term of this Agreement, Contractor shall provide services to Client on an exclusive basis and shall not provide software development services to any other client without Client's prior written consent.
+
+8. Termination
+Client may terminate this Agreement at its convenience, for any reason or no reason, upon 7 days written notice. Contractor may terminate only for Client's material breach if Client fails to cure the breach within 30 days. Upon termination, Contractor shall immediately stop work and deliver all work product to Client.
+
+9. Indemnification
+Contractor shall indemnify, defend, and hold harmless Client and its officers, directors, employees, affiliates, successors, and assigns from and against any and all claims, losses, damages, liabilities, costs, expenses, and attorneys' fees arising out of or related to Contractor's performance, breach, negligence, or alleged infringement.
+
+10. Limitation of Liability
+In no event shall Client be liable for any indirect, incidental, consequential, special, punitive, or lost profit damages. Client's total liability shall not exceed the fees paid in the prior 30 days. Contractor's liability for third-party claims, confidentiality breach, data breach, and indemnification obligations shall be unlimited.
+
+11. Data Privacy and Security
+Contractor may process personal data and confidential customer data. Contractor shall comply with all applicable privacy laws and shall provide immediate notice of any security breach or suspected data incident. Contractor shall be responsible for all penalties, claims, and costs caused by a security breach.
+
+12. Governing Law and Jurisdiction
+This Agreement shall be governed by the laws of the State of Delaware, USA. The parties irrevocably consent to the exclusive jurisdiction and venue of the state and federal courts located in New Castle County, Delaware.
+
+13. Arbitration
+Any dispute, controversy, or claim arising out of or relating to this Agreement shall be settled by binding arbitration under the rules of the American Arbitration Association. The arbitration shall take place in Wilmington, Delaware.
+
+14. Assignment
+Client may assign this Agreement to any affiliate, successor, or acquirer without Contractor's consent. Contractor may not assign this Agreement without Client's prior written consent.
+
+15. Automatic Renewal
+This Agreement shall automatically renew for successive one-year terms unless either party gives written notice of non-renewal at least 60 days before the end of the then-current term.
+
+16. Term
+The initial term begins on May 1, 2026 and continues for one year unless terminated earlier in accordance with this Agreement.
+

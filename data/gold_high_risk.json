@@ -1,0 +1,23 @@
+{
+  "document": "demo_high_risk_freelance_contract.txt",
+  "expected_clause_ids": [
+    "scope_acceptance",
+    "payment_terms",
+    "ip_ownership",
+    "confidentiality",
+    "non_compete",
+    "non_solicitation",
+    "exclusivity",
+    "unilateral_termination",
+    "indemnification",
+    "liability_cap",
+    "unlimited_liability",
+    "data_privacy",
+    "governing_law",
+    "arbitration",
+    "assignment_change",
+    "automatic_renewal",
+    "term_effective_date"
+  ]
+}
+

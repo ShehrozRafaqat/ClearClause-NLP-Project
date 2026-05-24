@@ -1,0 +1,28 @@
+BALANCED FREELANCE DESIGN AND DEVELOPMENT AGREEMENT
+
+This Agreement is entered into as of May 1, 2026 between BrightSide Studio Ltd. and an independent contractor.
+
+1. Scope and Acceptance
+Contractor will provide the deliverables described in an agreed Statement of Work. Each Statement of Work will include acceptance criteria, milestone dates, and included revisions. Additional revisions or out-of-scope requests require a written change request and additional fees.
+
+2. Payment
+Client will pay a 30 percent advance before work begins, 40 percent after milestone approval, and 30 percent on final delivery. Invoices are payable Net 15. Client may dispute only the specific portion of an invoice in good faith and must pay all undisputed amounts on time.
+
+3. Intellectual Property
+Contractor retains ownership of pre-existing tools, templates, know-how, and reusable code libraries. After full payment, Contractor grants Client a perpetual license to use the final deliverables for Client's business. Contractor may show non-confidential portions of the work in a portfolio.
+
+4. Confidentiality
+Each party will protect the other party's confidential information for 3 years. Confidential information does not include information that is publicly available, already known, independently developed, or required to be disclosed by law.
+
+5. Termination
+Either party may terminate for material breach if the breach is not cured within 15 days. Client may terminate for convenience with 14 days notice, but must pay for all completed work and approved expenses through the termination date.
+
+6. Liability
+Each party's total liability shall not exceed the fees paid under the applicable Statement of Work during the prior 3 months. Neither party shall be liable for indirect or consequential damages, except for willful misconduct or confidentiality breach.
+
+7. Dispute Resolution
+The parties will first attempt to resolve disputes through good-faith negotiation. If unresolved, disputes may be handled through online mediation or small-claims court where permitted.
+
+8. Effective Date and Term
+This Agreement starts on May 1, 2026 and continues until the work under the applicable Statement of Work is completed, unless terminated earlier.
+

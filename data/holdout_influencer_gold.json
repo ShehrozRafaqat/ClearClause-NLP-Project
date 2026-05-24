@@ -1,0 +1,22 @@
+{
+  "document": "holdout_influencer_agreement.txt",
+  "description": "Held-out creator / influencer marketing agreement. The clause catalog was NOT tuned against this contract, so the metrics here are the honest out-of-domain result.",
+  "expected_clause_ids": [
+    "scope_acceptance",
+    "payment_terms",
+    "ip_ownership",
+    "exclusivity",
+    "confidentiality",
+    "indemnification",
+    "unilateral_termination",
+    "liability_cap",
+    "governing_law",
+    "arbitration",
+    "term_effective_date"
+  ],
+  "out_of_scope_sections": [
+    "F. FTC Compliance and Brand Safety (advertising-law representations, not in the general clause catalog)",
+    "K. Talent Conduct (morality / brand-image clause specific to creator contracts)"
+  ],
+  "notes": "Section D is labelled 'Category Exclusivity' and is correctly labelled as 'exclusivity' rather than 'non_compete'. The catalog patterns also detect 'non_compete' here because of the post-engagement restriction wording; this is the expected false positive of an out-of-domain run."
+}
