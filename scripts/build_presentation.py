@@ -1311,6 +1311,456 @@ def slide_spread_calibration(prs, page, total):
     slide_footer(s, page, total)
 
 
+# =============================================================================
+# Business plan slides
+# =============================================================================
+
+
+def slide_opportunity(prs, page, total):
+    s = blank(prs)
+    slide_background(s)
+    slide_header(s, "Business plan · the opportunity",
+                 "A $1.86T freelance market with no review layer for it.",
+                 accent_color=GOLD)
+
+    add_text(s,
+             "The gig economy is now structural, not cyclical. Pakistan is the 4th-largest freelance market "
+             "in the world. None of the existing legal-tech players serve the people who actually need help.",
+             Inches(0.7), Inches(1.6), Inches(12), Inches(0.95),
+             size=13, color=INK_SOFT, font=BODY_FONT, line_spacing=1.35)
+
+    # 3 market stats
+    stats = [
+        ("1.5B+", "freelancers and gig workers globally (Statista 2024)", FOREST_BRIGHT),
+        ("$1.86T", "projected size of the global gig economy by 2031", CORAL),
+        ("4th", "Pakistan's global rank by gross freelance earnings (Payoneer)", AMBER),
+    ]
+    card_w = Inches(3.95)
+    card_h = Inches(2.4)
+    gap = Inches(0.2)
+    total_w = card_w * 3 + gap * 2
+    start_x = (SLIDE_W - total_w) / 2
+    for i, (value, label, color) in enumerate(stats):
+        left = start_x + i * (card_w + gap)
+        stat_card(s, left, Inches(2.75), card_w, card_h, value, label, color)
+
+    # bottom: existing options vs the gap
+    add_round(s, Inches(0.7), Inches(5.45), Inches(12), Inches(1.55),
+              fill=WHITE, line=LINE)
+    add_text(s, "What a freelancer's options look like today",
+             Inches(0.95), Inches(5.55), Inches(11.6), Inches(0.4),
+             size=13, bold=True, color=INK, font=HEADING_FONT)
+    options = [
+        ("$200–$500 / contract", "Hire a lawyer — uneconomic for a $500 project.", CORAL),
+        ("$40–$300 / month", "LegalZoom — helps draft your own, not review the client's.", AMBER),
+        ("Free, risky", "Sign blind — what most freelancers actually do.", FOREST_BRIGHT),
+    ]
+    opt_w = Inches(3.8)
+    opt_gap = Inches(0.1)
+    opt_start = Inches(0.95)
+    for i, (price, body, color) in enumerate(options):
+        x = opt_start + i * (opt_w + opt_gap)
+        add_round(s, x, Inches(6.0), opt_w, Inches(0.92), fill=PAPER, line=None)
+        add_rect(s, x, Inches(6.0), Inches(0.06), Inches(0.92), fill=color)
+        add_text(s, price, x + Inches(0.2), Inches(6.05),
+                 opt_w - Inches(0.3), Inches(0.32),
+                 size=11, bold=True, color=color, font=BODY_FONT)
+        add_text(s, body, x + Inches(0.2), Inches(6.4),
+                 opt_w - Inches(0.3), Inches(0.5),
+                 size=10, color=INK_SOFT, font=BODY_FONT, line_spacing=1.3)
+
+    slide_footer(s, page, total)
+
+
+def slide_customer(prs, page, total):
+    s = blank(prs)
+    slide_background(s)
+    slide_header(s, "Business plan · target customer",
+                 "South-Asian tech freelancer earning from international clients.",
+                 accent_color=GOLD)
+
+    # persona card (left)
+    pc_x = Inches(0.7)
+    pc_w = Inches(5.8)
+    pc_h = Inches(5.35)
+    add_round(s, pc_x, Inches(1.75), pc_w, pc_h, fill=WHITE, line=LINE)
+    add_rect(s, pc_x, Inches(1.75), pc_w, Inches(0.4), fill=FOREST_BRIGHT)
+    add_text(s, "YEAR-1 ICP", pc_x + Inches(0.3), Inches(1.78),
+             pc_w - Inches(0.6), Inches(0.34),
+             size=10, bold=True, color=WHITE, font=BODY_FONT, anchor=MSO_ANCHOR.MIDDLE)
+
+    # avatar circle
+    add_round(s, pc_x + Inches(0.4), Inches(2.4), Inches(1.4), Inches(1.4),
+              fill=FOREST_DEEP, radius=0.5)
+    add_text(s, "FL", pc_x + Inches(0.4), Inches(2.4),
+             Inches(1.4), Inches(1.4),
+             size=40, bold=True, color=CREAM, font=HEADING_FONT,
+             align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+
+    add_text(s, "Tariq, 27",
+             pc_x + Inches(2.0), Inches(2.45),
+             pc_w - Inches(2.2), Inches(0.5),
+             size=24, bold=True, color=INK, font=HEADING_FONT)
+    add_text(s, "Karachi · Senior dev on Upwork · 3 years freelancing",
+             pc_x + Inches(2.0), Inches(3.0),
+             pc_w - Inches(2.2), Inches(0.4),
+             size=12, color=MUTED, font=BODY_FONT)
+    add_text(s, "$5,400 / month from 4 international clients",
+             pc_x + Inches(2.0), Inches(3.35),
+             pc_w - Inches(2.2), Inches(0.4),
+             size=12, italic=True, color=FOREST_BRIGHT, font=BODY_FONT)
+
+    # facts grid
+    facts = [
+        ("AGE", "22–35"),
+        ("ROLE", "Developer / designer"),
+        ("INCOME", "$1k–$8k / month"),
+        ("DEVICES", "Laptop + WhatsApp"),
+        ("CHANNELS", "GitHub · LinkedIn · Reddit · Discord"),
+        ("PAYS FOR", "GitHub Pro, ChatGPT Plus, Notion"),
+    ]
+    for i, (label, value) in enumerate(facts):
+        row_y = Inches(4.1) + i * Inches(0.32)
+        add_text(s, label, pc_x + Inches(0.4), row_y,
+                 Inches(1.3), Inches(0.3),
+                 size=9, bold=True, color=MUTED, font=BODY_FONT, anchor=MSO_ANCHOR.MIDDLE)
+        add_text(s, value, pc_x + Inches(1.85), row_y,
+                 pc_w - Inches(2.0), Inches(0.3),
+                 size=11, color=INK, font=BODY_FONT, anchor=MSO_ANCHOR.MIDDLE)
+
+    # pains card (right)
+    rx = Inches(6.8)
+    rw = Inches(5.85)
+    add_round(s, rx, Inches(1.75), rw, pc_h, fill=WHITE, line=LINE)
+    add_text(s, "What hurts him today",
+             rx + Inches(0.3), Inches(1.9),
+             rw - Inches(0.6), Inches(0.5),
+             size=16, bold=True, color=INK, font=HEADING_FONT)
+
+    pains = [
+        ("Lost portfolio rights", "Signed a work-for-hire clause; can't show the project he's most proud of.", CORAL),
+        ("Unpaid after termination", "Client invoked unilateral termination on day 18; he was unpaid for 12 days of work.", CORAL),
+        ("Auto-renew trap", "Missed a 60-day non-renewal window on a retainer he wanted to end.", AMBER),
+        ("Liability scare", "Got a 'pay our legal fees' demand letter that nearly cost him the year's earnings.", CORAL),
+        ("Can't read clauses", "Knows section 9 matters but can't parse the legalese, can't afford a lawyer at $300/hr.", AMBER),
+    ]
+    for i, (title, body, color) in enumerate(pains):
+        y = Inches(2.55) + i * Inches(0.85)
+        add_round(s, rx + Inches(0.3), y, rw - Inches(0.6), Inches(0.78),
+                  fill=PAPER, line=None)
+        add_rect(s, rx + Inches(0.3), y, Inches(0.07), Inches(0.78), fill=color)
+        add_text(s, title, rx + Inches(0.5), y + Inches(0.06),
+                 rw - Inches(0.85), Inches(0.3),
+                 size=12, bold=True, color=INK, font=HEADING_FONT)
+        add_text(s, body, rx + Inches(0.5), y + Inches(0.36),
+                 rw - Inches(0.85), Inches(0.42),
+                 size=10, color=MUTED, font=BODY_FONT, line_spacing=1.3)
+
+    slide_footer(s, page, total)
+
+
+def slide_competition(prs, page, total):
+    s = blank(prs)
+    slide_background(s)
+    slide_header(s, "Business plan · competition",
+                 "The freelancer-friendly, affordable space is empty.",
+                 accent_color=GOLD)
+
+    add_text(s,
+             "Existing legal-tech players target either DIY drafting (LegalZoom) or enterprise CLM "
+             "(Ironclad, Lawgeex). None of them review a freelancer's incoming contract in 60 seconds for $9.",
+             Inches(0.7), Inches(1.6), Inches(12), Inches(0.95),
+             size=13, color=INK_SOFT, font=BODY_FONT, line_spacing=1.35)
+
+    # competitor table
+    tx = Inches(0.7)
+    tw = Inches(12)
+    ty = Inches(2.7)
+
+    # header
+    add_rect(s, tx, ty, tw, Inches(0.45), fill=FOREST_DEEP)
+    headers = [("Competitor", 3.2), ("Who they serve", 3.6), ("Price", 1.7), ("Why ClearClause wins", 3.5)]
+    cur_x = tx + Inches(0.2)
+    for label, width in headers:
+        add_text(s, label.upper(), cur_x, ty + Inches(0.02),
+                 Inches(width), Inches(0.4),
+                 size=10, bold=True, color=CREAM, font=BODY_FONT, anchor=MSO_ANCHOR.MIDDLE)
+        cur_x += Inches(width)
+
+    competitors = [
+        ("LegalZoom / Rocket Lawyer", "DIY drafting for small biz", "$40–$300/mo",
+         "We review what a client sent; they help draft your own.", PAPER_SOFT),
+        ("Lawgeex", "Enterprise legal teams", "$10k+/yr",
+         "B2B-only; out of reach for individuals.", WHITE),
+        ("Ironclad / LinkSquares", "Fortune 500 CLM", "$50k–$500k/yr",
+         "Enterprise CLM, not a freelancer tool.", PAPER_SOFT),
+        ("Harvey AI / Spellbook", "Law firms / in-house lawyers", "$100s/seat/mo",
+         "Built for lawyers, not their clients.", WHITE),
+        ("ChatGPT / generic LLM", "Anyone", "Free–$20/mo",
+         "No calibrated severity, no playbook, hallucinates.", PAPER_SOFT),
+        ("ClearClause", "Freelancers + small biz", "Free / $9 / mo",
+         "Freelancer-focused · explainable · offline · negotiation playbook.", GREEN_SOFT),
+    ]
+    row_h = Inches(0.58)
+    for i, (name, who, price, win, fill) in enumerate(competitors):
+        row_y = ty + Inches(0.45) + i * row_h
+        is_us = (name == "ClearClause")
+        add_rect(s, tx, row_y, tw, row_h, fill=fill)
+        cur_x = tx + Inches(0.2)
+        name_color = FOREST_DEEP if is_us else INK
+        add_text(s, name, cur_x, row_y,
+                 Inches(3.2), row_h,
+                 size=11, bold=True, color=name_color, font=BODY_FONT, anchor=MSO_ANCHOR.MIDDLE)
+        cur_x += Inches(3.2)
+        add_text(s, who, cur_x, row_y,
+                 Inches(3.6), row_h,
+                 size=10, color=INK_SOFT, font=BODY_FONT, anchor=MSO_ANCHOR.MIDDLE)
+        cur_x += Inches(3.6)
+        add_text(s, price, cur_x, row_y,
+                 Inches(1.7), row_h,
+                 size=10, bold=is_us, color=GREEN if is_us else INK_SOFT, font=BODY_FONT, anchor=MSO_ANCHOR.MIDDLE)
+        cur_x += Inches(1.7)
+        add_text(s, win, cur_x, row_y,
+                 Inches(3.5), row_h,
+                 size=10, bold=is_us, color=FOREST_DEEP if is_us else INK_SOFT,
+                 font=BODY_FONT, anchor=MSO_ANCHOR.MIDDLE, line_spacing=1.2)
+
+    slide_footer(s, page, total)
+
+
+def slide_business_model(prs, page, total):
+    s = blank(prs)
+    slide_background(s)
+    slide_header(s, "Business plan · revenue",
+                 "Three revenue streams, layered as we scale.",
+                 accent_color=GOLD)
+
+    add_text(s,
+             "Year 1 focuses on direct freelancer subscriptions — the cleanest unit economics and the "
+             "shortest sales cycle. Marketplace API and enterprise tiers are the upside.",
+             Inches(0.7), Inches(1.6), Inches(12), Inches(0.95),
+             size=13, color=INK_SOFT, font=BODY_FONT, line_spacing=1.35)
+
+    # 3 pricing tiers
+    tiers = [
+        ("FREE", "$0", "Try the product",
+         ["2 reviews / month", "Basic HTML report", "Public clause catalog", "No credit card"],
+         FOREST_BRIGHT, False),
+        ("PRO", "$9 / month", "Individual freelancer",
+         ["Unlimited reviews", "Full negotiation pack", "Contract history", "Email priority support"],
+         CORAL, True),
+        ("TEAM", "$29 / month", "Agencies, small studios",
+         ["Everything in Pro", "Up to 5 seats", "Shared clause library", "CSV export API"],
+         FOREST_DEEP, False),
+    ]
+    card_w = Inches(3.95)
+    card_h = Inches(3.55)
+    gap = Inches(0.2)
+    total_w = card_w * 3 + gap * 2
+    start_x = (SLIDE_W - total_w) / 2
+
+    for i, (name, price, audience, bullets, color, featured) in enumerate(tiers):
+        left = start_x + i * (card_w + gap)
+        top = Inches(2.95)
+        if featured:
+            # featured ribbon sits ABOVE the card (no overlap)
+            add_round(s, left + Inches(1.05), top - Inches(0.42),
+                      Inches(1.85), Inches(0.32),
+                      fill=GOLD, radius=0.45)
+            add_text(s, "MOST POPULAR", left + Inches(1.05), top - Inches(0.42),
+                     Inches(1.85), Inches(0.32),
+                     size=9, bold=True, color=WHITE, font=BODY_FONT,
+                     align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+        add_round(s, left, top, card_w, card_h, fill=WHITE, line=LINE)
+        add_rect(s, left, top, card_w, Inches(0.12), fill=color)
+        add_text(s, name, left + Inches(0.3), top + Inches(0.3),
+                 card_w - Inches(0.6), Inches(0.4),
+                 size=11, bold=True, color=MUTED, font=BODY_FONT)
+        add_text(s, price, left + Inches(0.3), top + Inches(0.65),
+                 card_w - Inches(0.6), Inches(0.7),
+                 size=30, bold=True, color=color, font=HEADING_FONT)
+        add_text(s, audience, left + Inches(0.3), top + Inches(1.4),
+                 card_w - Inches(0.6), Inches(0.4),
+                 size=11, italic=True, color=INK_SOFT, font=BODY_FONT)
+        add_bullets(s, bullets, left + Inches(0.3), top + Inches(1.9),
+                    card_w - Inches(0.5), Inches(1.6),
+                    size=11, color=INK_SOFT, bullet_color=color,
+                    bullet_char="✓", line_spacing=1.5)
+
+    # B2B revenue lines
+    b2b_y = Inches(6.6)
+    add_round(s, Inches(0.7), b2b_y, Inches(12), Inches(0.5),
+              fill=CREAM, line=LINE)
+    add_text(s, "B2B upside · marketplace API at ~$0.20 / review for Upwork / Fiverr partners  ·  Enterprise tier at $5k–$25k / year",
+             Inches(0.9), b2b_y, Inches(11.6), Inches(0.5),
+             size=11, bold=True, color=FOREST_DEEP, font=BODY_FONT,
+             align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+
+    slide_footer(s, page, total)
+
+
+def slide_go_to_market(prs, page, total):
+    s = blank(prs)
+    slide_background(s)
+    slide_header(s, "Business plan · go-to-market",
+                 "Community-led launch, then content, then partnerships.",
+                 accent_color=GOLD)
+
+    add_text(s,
+             "We start where the founders have natural distribution access (Pakistan), expand through "
+             "English-speaking developing markets, then layer paid + enterprise as unit economics prove out.",
+             Inches(0.7), Inches(1.6), Inches(12), Inches(0.9),
+             size=13, color=INK_SOFT, font=BODY_FONT, line_spacing=1.35)
+
+    # 3 phase cards
+    phases = [
+        ("PHASE 1", "Months 0–6", "Community-led launch",
+         ["Pakistani freelance Facebook groups (PFA, KFA)",
+          "University CS societies (FAST, NUST, LUMS, COMSATS)",
+          "Pakistani freelance YouTube partnerships",
+          "Indie Hackers / Reddit r/freelance launch",
+          "Free Pro accounts for first 100 written reviews"],
+         FOREST_BRIGHT),
+        ("PHASE 2", "Months 6–12", "Content + product-led growth",
+         ["30+ SEO articles on freelance contract clauses",
+          "Shareable HTML reports with built-in branding",
+          "Expand to India · Bangladesh · Philippines",
+          "Product Hunt launch (Month 3) → AppSumo deal",
+          "First marketplace API conversations (Upwork, Fiverr)"],
+         CORAL),
+        ("PHASE 3", "Months 12–24", "Paid acquisition + B2B",
+         ["LinkedIn performance marketing (freelancers)",
+          "Enterprise outbound to freelance unions + agencies",
+          "Sign 1–2 marketplace API partners",
+          "Launch in UK + EU + US gig-worker markets",
+          "Stripe-powered self-serve Team tier"],
+         AMBER),
+    ]
+    card_w = Inches(3.95)
+    card_h = Inches(3.85)
+    gap = Inches(0.2)
+    total_w = card_w * 3 + gap * 2
+    start_x = (SLIDE_W - total_w) / 2
+
+    for i, (eyebrow, when, title, bullets, color) in enumerate(phases):
+        left = start_x + i * (card_w + gap)
+        top = Inches(2.7)
+        add_round(s, left, top, card_w, card_h, fill=WHITE, line=LINE)
+        add_rect(s, left, top, card_w, Inches(0.18), fill=color)
+        add_text(s, eyebrow, left + Inches(0.3), top + Inches(0.35),
+                 card_w - Inches(0.6), Inches(0.3),
+                 size=10, bold=True, color=color, font=BODY_FONT)
+        add_text(s, when, left + Inches(0.3), top + Inches(0.65),
+                 card_w - Inches(0.6), Inches(0.32),
+                 size=11, color=MUTED, font=BODY_FONT)
+        add_text(s, title, left + Inches(0.3), top + Inches(0.97),
+                 card_w - Inches(0.6), Inches(0.55),
+                 size=17, bold=True, color=INK, font=HEADING_FONT)
+        add_bullets(s, bullets, left + Inches(0.3), top + Inches(1.6),
+                    card_w - Inches(0.5), Inches(2.2),
+                    size=10, color=INK_SOFT, bullet_color=color, line_spacing=1.4)
+
+    # unit economics strip
+    ue_y = Inches(6.75)
+    add_round(s, Inches(0.7), ue_y, Inches(12), Inches(0.45),
+              fill=CREAM, line=LINE)
+    add_text(s,
+             "Year-1 unit economics · ARPU $9/mo · CAC ~$8 community-led · gross margin ~85% · LTV/CAC ~17×",
+             Inches(0.9), ue_y, Inches(11.6), Inches(0.45),
+             size=11, bold=True, color=FOREST_DEEP, font=BODY_FONT,
+             align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+
+    slide_footer(s, page, total)
+
+
+def slide_roadmap(prs, page, total):
+    s = blank(prs)
+    slide_background(s)
+    slide_header(s, "Business plan · scale roadmap",
+                 "From Streamlit MVP to multi-tenant enterprise.",
+                 accent_color=GOLD)
+
+    add_text(s,
+             "Each version is a discrete bet, with a single learning goal. We do not commit to V3 until V1's "
+             "free→Pro conversion proves the unit economics.",
+             Inches(0.7), Inches(1.6), Inches(12), Inches(0.95),
+             size=13, color=INK_SOFT, font=BODY_FONT, line_spacing=1.35)
+
+    # Timeline with 5 stages
+    stages = [
+        ("MVP", "M0", "Streamlit app, 17-clause catalog, redline, Q&A, exports. Offline-capable.",
+         "Does the pipeline produce useful output on real freelance contracts?",
+         FOREST_BRIGHT, True),
+        ("V1", "M1–3", "Supabase auth, Stripe billing, contract history, multilingual scaffold.",
+         "What's the free→Pro conversion rate?",
+         CORAL, False),
+        ("V2", "M3–6", "Browser extension (Gmail contract scan), mobile-responsive, contract diff.",
+         "Where do freelancers actually encounter contracts?",
+         AMBER, False),
+        ("V3", "M6–12", "FastAPI service, multi-tenant infra, marketplace API for Upwork / Fiverr.",
+         "Can we sign a marketplace partner?",
+         GREEN, False),
+        ("V4", "M12+", "Enterprise SSO + audit logs, fine-tuned classifier on CUAD, Urdu + Arabic catalogs.",
+         "How does the learned classifier compare to the rule-based catalog?",
+         FOREST_DEEP, False),
+    ]
+    # horizontal layout
+    n = len(stages)
+    card_w = Inches(2.46)
+    gap = Inches(0.05)
+    total_w = card_w * n + gap * (n - 1)
+    start_x = (SLIDE_W - total_w) / 2
+    card_h = Inches(4.0)
+    top = Inches(2.65)
+
+    # connecting timeline line behind cards
+    line_y = top + Inches(0.85)
+    add_rect(s, start_x + Inches(0.4), line_y,
+             total_w - Inches(0.8), Inches(0.06), fill=LINE)
+
+    for i, (label, when, what, question, color, current) in enumerate(stages):
+        left = start_x + i * (card_w + gap)
+        add_round(s, left, top, card_w, card_h, fill=WHITE, line=LINE)
+        add_rect(s, left, top, card_w, Inches(0.18), fill=color)
+        # circle marker
+        add_round(s, left + card_w / 2 - Inches(0.35), top + Inches(0.55),
+                  Inches(0.7), Inches(0.7), fill=color, radius=0.5)
+        add_text(s, label, left + card_w / 2 - Inches(0.35), top + Inches(0.55),
+                 Inches(0.7), Inches(0.7),
+                 size=18, bold=True, color=WHITE, font=HEADING_FONT,
+                 align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+        add_text(s, when, left + Inches(0.2), top + Inches(1.4),
+                 card_w - Inches(0.4), Inches(0.32),
+                 size=10, bold=True, color=color, font=BODY_FONT,
+                 align=PP_ALIGN.CENTER)
+        if current:
+            add_round(s, left + Inches(0.2), top + Inches(1.72),
+                      card_w - Inches(0.4), Inches(0.28),
+                      fill=GREEN_SOFT, radius=0.45)
+            add_text(s, "WE ARE HERE", left + Inches(0.2), top + Inches(1.72),
+                     card_w - Inches(0.4), Inches(0.28),
+                     size=8, bold=True, color=GREEN, font=BODY_FONT,
+                     align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+        wh_top = top + (Inches(2.1) if current else Inches(1.78))
+        add_text(s, what, left + Inches(0.2), wh_top,
+                 card_w - Inches(0.4), Inches(1.15),
+                 size=10, color=INK_SOFT, font=BODY_FONT, line_spacing=1.35)
+        # learning goal pill at bottom
+        add_round(s, left + Inches(0.2), top + card_h - Inches(0.85),
+                  card_w - Inches(0.4), Inches(0.7),
+                  fill=PAPER, line=None)
+        add_text(s, "LEARNING GOAL", left + Inches(0.2), top + card_h - Inches(0.85),
+                 card_w - Inches(0.4), Inches(0.22),
+                 size=8, bold=True, color=MUTED, font=BODY_FONT,
+                 align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+        add_text(s, question, left + Inches(0.3), top + card_h - Inches(0.62),
+                 card_w - Inches(0.6), Inches(0.55),
+                 size=9, italic=True, color=INK_SOFT, font=BODY_FONT,
+                 align=PP_ALIGN.CENTER, line_spacing=1.25)
+
+    slide_footer(s, page, total)
+
+
 def slide_stack_limits(prs, page, total):
     s = blank(prs)
     slide_background(s)
@@ -1427,6 +1877,14 @@ def build_presentation(output_path: Path) -> Path:
         slide_dashboard,
         slide_evaluation,
         slide_spread_calibration,
+        # ── Part 2 · Business plan ──
+        slide_opportunity,
+        slide_customer,
+        slide_competition,
+        slide_business_model,
+        slide_go_to_market,
+        slide_roadmap,
+        # ────────────────────────────
         slide_stack_limits,
         slide_thank_you,
     ]
