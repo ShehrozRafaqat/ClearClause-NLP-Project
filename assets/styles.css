@@ -38,6 +38,20 @@ html, body, .stApp, [class*="css"], [class*="st-emotion-cache"] {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Streamlit renders icons (expander arrows, widget icons) as Material
+   Symbols font ligatures — the broad Inter override above breaks them and
+   shows raw text like "keyboard_arrow_down". Restore the icon font. */
+[data-testid="stIconMaterial"],
+[data-testid="stExpanderToggleIcon"],
+span[data-testid*="Icon"],
+.material-symbols-rounded,
+.material-symbols-outlined,
+.material-icons {
+  font-family: "Material Symbols Rounded", "Material Symbols Outlined", "Material Icons" !important;
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+}
+
 /* Force readable ink text on the light paper background regardless of the
    browser/OS dark-mode theme Streamlit may pick up. */
 .stApp p,
