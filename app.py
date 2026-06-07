@@ -1001,23 +1001,6 @@ def export_tab(analysis) -> None:
     with st.expander("Preview negotiation pack"):
         st.markdown(md_report)
 
-    st.markdown(
-        """
-<div class='cc-panel muted' style='margin-top:.7rem'>
-  <span class='cc-panel-title'>Key design points</span>
-  <ol style='margin:.2rem 0 .2rem 1.1rem;padding:0;line-height:1.55'>
-    <li>Parser handles TXT, PDF, and DOCX; the same downstream pipeline runs in all cases.</li>
-    <li>Clause detection is hybrid: explainable regex catalog + TF-IDF semantic prototypes.</li>
-    <li>Each finding has severity, confidence, source evidence, and a negotiation action list.</li>
-    <li>Risk score has a transparent formula (confidence-weighted adjusted weights + flag pressure).</li>
-    <li>Q&amp;A is grounded retrieval: it returns contract evidence, not free-form generation.</li>
-    <li>Groq is strictly an optional polish layer — the demo works fully offline.</li>
-  </ol>
-</div>
-""",
-        unsafe_allow_html=True,
-    )
-
 
 @st.cache_data(show_spinner=False)
 def run_full_evaluation() -> dict:
