@@ -2,8 +2,8 @@
 
 Runs the full NLP pipeline against the gold demo, the held-out influencer
 contract, the score-spread sanity check, and the confidence calibration
-report. Prints everything in a single readable block so a sessional viva can
-show the system is more than a UI mockup.
+report. Prints everything in a single readable block to show the system is
+more than a UI mockup.
 """
 
 from __future__ import annotations

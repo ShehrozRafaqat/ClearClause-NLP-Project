@@ -84,7 +84,7 @@ When the key is present and the sidebar toggle is on, Groq rewrites the
 plain-English explanations of HIGH/MEDIUM findings, regenerates the executive
 summary, and answers chat questions using the offline retriever as context.
 
-## Demo flow (60-second viva path)
+## Demo flow (60-second path)
 
 1. From the sidebar, click **High-risk freelance demo**.
 2. Click **Analyze contract**.
@@ -112,7 +112,7 @@ ClearClause-NLP-Project/
 ├── evaluation.py                   # precision / recall / F1 harness
 ├── run.sh
 ├── README.md
-├── PRESENTATION_GUIDE.md           # viva script and talking points
+├── PRESENTATION_GUIDE.md           # demo script and talking points
 ├── clearclause/                    # the NLP pipeline package
 │   ├── __init__.py
 │   ├── ai.py                       # optional Groq integration

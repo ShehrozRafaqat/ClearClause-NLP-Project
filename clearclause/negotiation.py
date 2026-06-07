@@ -7,7 +7,7 @@ It produces three artefacts:
 1. A prioritised checklist of negotiation actions, ranked by business impact.
 2. A fair-contract benchmark that compares each detected clause to a balanced
    industry-standard version of the same clause.
-3. A short list of suggested viva / discovery questions tailored to the risks
+3. A short list of suggested discovery questions tailored to the risks
    actually found in this document.
 """
 

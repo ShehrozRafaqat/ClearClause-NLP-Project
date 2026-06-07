@@ -257,7 +257,7 @@ and reports:
 | Library | Role | Why we picked it |
 |---|---|---|
 | **Streamlit** | Interactive UI with custom CSS | Fastest way to build a polished interactive UI in Python; supports custom HTML for the redline view |
-| **scikit-learn** | TF-IDF vectorisation + cosine similarity | Standard, deterministic, easy to explain in a viva |
+| **scikit-learn** | TF-IDF vectorisation + cosine similarity | Standard, deterministic, easy to explain |
 | **Plotly** | Risk gauge, severity donut, dimensional radar, calibration chart | Interactive charts that match Streamlit's reactive model |
 | **pdfplumber** | PDF parsing | Robust text-layer extraction on freelance contracts |
 | **python-docx** | DOCX parsing | Reads paragraphs + tables; the standard Word library |

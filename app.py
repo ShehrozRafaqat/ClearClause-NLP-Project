@@ -308,7 +308,7 @@ def hero() -> None:
       <div class="cc-brand-mark">CC</div>
       <div>
         <div class="cc-brand-name">ClearClause</div>
-        <div class="cc-brand-tag">AI Contract Risk Analyzer · Final NLP Build</div>
+        <div class="cc-brand-tag">AI Contract Risk Analyzer</div>
       </div>
     </div>
     <div class="cc-hero-meta">
@@ -436,7 +436,7 @@ def sidebar() -> tuple[str, bool]:
   <div class="mark">CC</div>
   <div>
     <div class="name">ClearClause</div>
-    <div class="role">Final NLP Build</div>
+    <div class="role">Contract Risk Analyzer</div>
   </div>
 </div>
 """,
@@ -961,7 +961,7 @@ def evaluation_tab(analysis) -> None:
     st.markdown(
         """
 <div class='cc-panel muted'>
-  <span class='cc-panel-title'>Methodology recap for viva</span>
+  <span class='cc-panel-title'>Methodology recap</span>
   <ol style='margin:.2rem 0 .2rem 1.1rem;padding:0;line-height:1.55'>
     <li>Document text is normalised, split into sections, and re-joined into chunks.</li>
     <li>Each section is scored against every clause rule using regex pattern matching.</li>
@@ -1022,7 +1022,7 @@ def export_tab(analysis) -> None:
     st.markdown(
         """
 <div class='cc-panel muted' style='margin-top:.7rem'>
-  <span class='cc-panel-title'>Viva talking points</span>
+  <span class='cc-panel-title'>Key design points</span>
   <ol style='margin:.2rem 0 .2rem 1.1rem;padding:0;line-height:1.55'>
     <li>Parser handles TXT, PDF, and DOCX; the same downstream pipeline runs in all cases.</li>
     <li>Clause detection is hybrid: explainable regex catalog + TF-IDF semantic prototypes.</li>
@@ -1122,7 +1122,7 @@ def main() -> None:
         export_tab(analysis)
 
     st.markdown(
-        "<div class='cc-footer'>ClearClause Final NLP Build · educational output, not legal advice.</div>",
+        "<div class='cc-footer'>ClearClause · educational output, not legal advice.</div>",
         unsafe_allow_html=True,
     )
 
