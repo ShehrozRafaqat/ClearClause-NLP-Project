@@ -958,24 +958,6 @@ def evaluation_tab(analysis) -> None:
     rows = findings_to_rows(analysis.findings)
     st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
 
-    st.markdown(
-        """
-<div class='cc-panel muted'>
-  <span class='cc-panel-title'>Methodology recap</span>
-  <ol style='margin:.2rem 0 .2rem 1.1rem;padding:0;line-height:1.55'>
-    <li>Document text is normalised, split into sections, and re-joined into chunks.</li>
-    <li>Each section is scored against every clause rule using regex pattern matching.</li>
-    <li>TF-IDF cosine similarity adds a semantic signal when patterns don't fire.</li>
-    <li>Red-flag and balancing-language counters adjust severity and weight per clause.</li>
-    <li>Raw risk is a confidence-weighted sum of adjusted weights, then passed through an
-        exponential compression curve so the worst contracts don't all saturate at 100.</li>
-    <li>Q&amp;A retrieves contract chunks and reuses detected clauses where intents match.</li>
-  </ol>
-</div>
-""",
-        unsafe_allow_html=True,
-    )
-
 
 def export_tab(analysis) -> None:
     html_report = build_html_report(analysis)
@@ -1098,28 +1080,24 @@ def main() -> None:
         return
 
     kpi_strip(analysis)
-    tabs = st.tabs(
-        [
-            "Executive Dashboard",
-            "Clauses & Evidence",
-            "Negotiation Coach",
-            "Ask the Document",
-            "Pipeline & Evaluation",
-            "Export",
-        ]
-    )
-    with tabs[0]:
-        dashboard_tab(analysis)
-    with tabs[1]:
-        clauses_tab(analysis)
-    with tabs[2]:
-        negotiation_tab(analysis)
-    with tabs[3]:
-        chat_tab(analysis, groq_key)
-    with tabs[4]:
-        evaluation_tab(analysis)
-    with tabs[5]:
-        export_tab(analysis)
+
+    # Flip to True to bring back the "Pipeline & Evaluation" tab.
+    show_evaluation_tab = False
+
+    tab_specs = [
+        ("Executive Dashboard", dashboard_tab),
+        ("Clauses & Evidence", clauses_tab),
+        ("Negotiation Coach", negotiation_tab),
+        ("Ask the Document", lambda a: chat_tab(a, groq_key)),
+    ]
+    if show_evaluation_tab:
+        tab_specs.append(("Pipeline & Evaluation", evaluation_tab))
+    tab_specs.append(("Export", export_tab))
+
+    tabs = st.tabs([label for label, _ in tab_specs])
+    for tab, (_, render) in zip(tabs, tab_specs):
+        with tab:
+            render(analysis)
 
     st.markdown(
         "<div class='cc-footer'>ClearClause · educational output, not legal advice.</div>",
